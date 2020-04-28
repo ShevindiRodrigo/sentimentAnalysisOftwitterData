@@ -7,6 +7,7 @@ import csv
 #Twitter API credentials
 consumer_key = "Qw0n2TBh0bmxxxxxxxxxx"
 consumer_secret = "çcxxxxxxxxxxxxxxxxfOuV0OsbXw5Yr89dYEZ"
+access_key = "xxxxxxxxxxxxxxxxxxxxxxx"
 access_secret = "HriOBGmmxxxxxxxxxxwoD42CVXi6kuCayQMNX9oGso"
 
 
