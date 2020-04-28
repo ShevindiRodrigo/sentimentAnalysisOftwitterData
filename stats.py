@@ -60,7 +60,7 @@ if __name__ == '__main__':
         lines = csv.readlines()
         num_tweets = len(lines)
         for i, line in enumerate(lines):
-            t_id, if_pos, tweet = line.strip().split(',')
+            t_id, tweet = line.strip().split(',')
 	   
             result, words, bigrams = analyze_tweet(tweet)
             num_mentions += result['MENTIONS']

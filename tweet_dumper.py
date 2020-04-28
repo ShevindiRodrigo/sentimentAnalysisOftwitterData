@@ -7,8 +7,8 @@ import csv
 #Twitter API credentials
 consumer_key = "Qw0n2TBh0bmKcFtOlivJcykxG"
 consumer_secret = "00E3TEN3GjNuSTAm6fmqTDm1lXbgilHg6r6K2XKo35Xhhhppbb"
-access_key = "1231295994425376771-PUyvFg7J3R3maE7GHSYJC13tB4p5G6"
-access_secret = "t2zs1xGW27No1P3IjVUQqRL5FYSlQvdgXDEPTNNowiYHB"
+access_key = "1231295994425376771-rpEbLsuTpxVfOuV0OsbXw5Yr89dYEZ"
+access_secret = "HriOBGh10FHOZO2kvYNESwoD42CVXi6kuCayQMNX9oGso"
 
 
 def get_all_tweets(screen_name):
@@ -47,12 +47,12 @@ def get_all_tweets(screen_name):
 		print "...%s tweets downloaded so far" % (len(alltweets))
 	
 	#transform the tweepy tweets into a 2D array that will populate the csv	
-	outtweets = [[tweet.id_str, tweet.created_at, tweet.text.encode("utf-8")] for tweet in alltweets]
+	outtweets = [[tweet.id_str, tweet.created_at, tweet.text.encode("utf-8"), tweet.retweet_count, tweet.favorite_count, tweet.entities, tweet.user.id] for tweet in alltweets]
 	
 	#write the csv	
 	with open('%s_tweets.csv' % screen_name, 'wb') as f:
 		writer = csv.writer(f)
-		writer.writerow(["id","created_at","text"])
+		writer.writerow(["id","created_at","text","retweetcount", "favouritecount", "entities", "user"])
 		writer.writerows(outtweets)
 	
 	pass
